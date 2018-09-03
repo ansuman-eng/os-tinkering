@@ -26,7 +26,7 @@ int main()
         int sum = 0;
         int num = 0;
         read(pdf[0],temp,9999);
-        printf("%s\n", temp);
+        //printf("%s\n", temp);
         while(temp!="X")
         {
         num=0;
