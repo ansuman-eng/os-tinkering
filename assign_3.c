@@ -40,7 +40,7 @@ int main()
             {
                 sq++;
             }
-        printf("Square root is %d %d\n",num, sq);
+        //printf("Square root is %d %d\n",num, sq);
         int boo = 0;
         for(int i=2;i<=sq;i++)
         {
@@ -52,7 +52,7 @@ int main()
         }
         if(boo!=1)
         {
-            printf("%d is prime\n",num);
+            //printf("%d is prime\n",num);
             sum+=num;
         }
         printf("current value of sum is %d\n",sum);
@@ -75,7 +75,7 @@ int main()
         while(nex_ind==curr_ind)
             nex_ind=rand()%10;
         hash[curr_ind]=hash[nex_ind]=1;
-        printf("x = %s & y = %s\n",a[curr_ind],a[nex_ind]);
+        //printf("x = %s & y = %s\n",a[curr_ind],a[nex_ind]);
         write(pdf[1],a[nex_ind],strlen(a[nex_ind])+1);
         int num=0;
         for(int i =0;i<strlen(a[curr_ind]);i++)
