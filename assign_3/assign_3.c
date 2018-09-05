@@ -70,19 +70,19 @@ int main()
         int nex_ind=-1;
         while(check(hash)==0)
         {
-        curr_ind= rand()%10;
-        nex_ind=curr_ind;
-        while(nex_ind==curr_ind)
-            nex_ind=rand()%10;
-        hash[curr_ind]=hash[nex_ind]=1;
-        //printf("x = %s & y = %s\n",a[curr_ind],a[nex_ind]);
-        write(pdf[1],a[nex_ind],strlen(a[nex_ind])+1);
-        int num=0;
-        for(int i =0;i<strlen(a[curr_ind]);i++)
-        {
-            num=num*10+(a[curr_ind][i]-'0');
-        }
-        sleep(num/3);
+		curr_ind= rand()%10;
+		nex_ind=curr_ind;
+		while(nex_ind==curr_ind)
+		    nex_ind=rand()%10;
+		hash[curr_ind]=hash[nex_ind]=1;
+		//printf("x = %s & y = %s\n",a[curr_ind],a[nex_ind]);
+		write(pdf[1],a[nex_ind],strlen(a[nex_ind])+1);
+		int num=0;
+		for(int i =0;i<strlen(a[curr_ind]);i++)
+		{
+		    num=num*10+(a[curr_ind][i]-'0');
+		}
+		sleep(num/3);
         }
         write(pdf[1],"X",2);
         
