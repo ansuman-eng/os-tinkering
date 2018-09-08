@@ -28,7 +28,7 @@ int my_shell_cd(char* args)
 	{
 		if(chdir(args)!=0)
 		{
-			perror("Error in CD. Are you sure directory is correct ?\n");
+			perror("Error in CD.\n");
 		}
 	}
 	return 1;
@@ -47,29 +47,32 @@ int my_shell_sp(char *command, char *args)
 		if(strcmp(command,"ls")==0)
 		{
 			if(args==NULL)
-				execlp("/bin/ls","ls",NULL);
+				execlp("/bin/ls","ls",NULL);						//If no arguments, run ls for present directory
 			else if(execlp("/bin/ls","ls",args,NULL)==-1)
-				perror("Error in ls. Check arguments\n");
+				perror("Error in ls.\n");
 				
 		}
 		else if(strcmp(command,"wc")==0)
 		{
 			if(args==NULL)
-				printf("Not enough arguments");
+				{
+					printf("Not enough arguments");
+					exit(0);
+				}
 			else
 			{
 				char * option=strsep(&args," ");
 				//printf("Options %s\n",option);
 				//printf("File %s\n",args);
 				if(execlp("wc","wc",option,args,NULL)==-1)
-					perror("Error in wc. Check arguments\n");
+					perror("Error in wc.\n");
 
 			}
 		}
 		else
 		{
 			if(execlp("/bin/echo","echo",args,NULL)==-1)
-				perror("Error in echo. Check arguments\n");
+				perror("Error in echo.\n");
 		}
 	}
 	else
